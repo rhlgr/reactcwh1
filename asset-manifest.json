@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reactcwh1/static/css/main.c2cab247.css",
+    "main.js": "/reactcwh1/static/js/main.a7755be7.js",
+    "index.html": "/reactcwh1/index.html",
+    "main.c2cab247.css.map": "/reactcwh1/static/css/main.c2cab247.css.map",
+    "main.a7755be7.js.map": "/reactcwh1/static/js/main.a7755be7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2cab247.css",
+    "static/js/main.a7755be7.js"
+  ]
+}
