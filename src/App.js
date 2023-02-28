@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { useState } from 'react'
+import About from './components/About'
+import Alert from './components/Alert'
+import {
+  Route,
+  Router,
+  Link
+} from "react-router-dom";
+
+import Form from "./components/Form"
+import Nav from "./components/Nav"
+
+
+
+const App = () => {
+  const [alert, setalert] = useState(null)
+
+ const showAlert  = (message,type)=>{
+setalert({
+  msg:message,
+  type:type
+})
+setTimeout(() => {
+  setalert(null)
+}, 1500);
+ }
+ 
+const [mode, setmode] = useState('dark')
+const toggleMode = ()=>{
+  if(mode === "light"){
+    setmode("dark")
+    showAlert( "Light mode has been enabled","success")
+  }else{
+    setmode("light")
+  }
 }
 
-export default App;
+  return (
+   <>
+     <Nav mode = {mode} toggleMode={toggleMode} />
+    <Alert alert={alert}/>
+
+    <div className='container mt-5'>
+
+        
+
+    <Form Heading="Enter your text"/>
+          
+
+    
+
+
+    </div>
+ 
+ 
+        </>
+  )
+}
+
+export default App
